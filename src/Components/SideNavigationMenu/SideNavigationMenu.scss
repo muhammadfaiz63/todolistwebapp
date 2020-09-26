@@ -1,4 +1,4 @@
-@import "../../utils/dx-styles.scss";
+@import "../../Utils/dx-styles.scss";
 @import "../../Themes/Generated/variables.base.scss";
 
 .side-navigation-menu {
@@ -98,6 +98,6 @@
 }
 
 .dx-drawer-overlap.pre-init-blink-fix {
-  @import "../../utils/patches.scss";
+  @import "../../Utils/patches.scss";
   @include menu-pre-init-patch;
 }
