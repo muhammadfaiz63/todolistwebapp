@@ -1,0 +1,23 @@
+@import "../../Themes/Generated/variables.base.scss";
+
+.login-form {
+  .link {
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+   
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .form-text {
+    margin: 10px 0;
+    color: rgba($base-text-color, alpha($base-text-color) * 0.7);
+  }
+
+  .forgot-password {
+    font-size: 10;
+  }
+}
