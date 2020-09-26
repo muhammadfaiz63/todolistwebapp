@@ -25,7 +25,7 @@ const colors = {
     primary: '#00517d',
     disabled: '#BDBDBD',
     backgroundScreen: '#f2f2f2',
-    hover: '#00517d'
+    hover: '#007ec2'
   }
   
   export default colors

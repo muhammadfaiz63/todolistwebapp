@@ -12,7 +12,7 @@ const api = axios.create({
 // ===> api interceptors 
 api.interceptors.request.use(function (config) {
     // set headers after authentication
-    config.headers['x-accesst-token'] = localStorage.token;
+    config.headers['x-access-token'] = localStorage.token;
     return config;
 }, function (error) {
   // Do something with request error

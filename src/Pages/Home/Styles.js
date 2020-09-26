@@ -122,6 +122,12 @@ export default makeStyles((theme) => ({
         fontWeight:200,
         fontSize:15
       },
+      txtAction2:{
+        textTransform:'none',
+        color:'#000',
+        fontWeight:200,
+        fontSize:15
+      },
     labelInput:{
         fontSize:14
       },
@@ -135,6 +141,19 @@ export default makeStyles((theme) => ({
         borderRadius:10,
         paddingBottom:10
     },
+    closeBtn:{
+      paddingLeft:50,
+      paddingRight:50,
+      marginRight:10,
+      backgroundColor:"transparent",
+      paddingTop:9,
+      textTransform:"none",
+      alignSelf:"center",
+      borderRadius:10,
+      paddingBottom:9,
+      border:"2px solid "+ Colors.background
+  },
+
     txtContentTable:{
         fontSize:13
     },
@@ -294,8 +313,8 @@ export default makeStyles((theme) => ({
         width:"100%",
         height:37,
         backgroundColor:Colors.backgroundScreen,
-        // borderTopRightRadius:0,
-        // borderBottomRightRadius:0,
+        borderTopRightRadius:0,
+        borderBottomRightRadius:0,
         color: '#000'
       },
       multilineColorWhite: {

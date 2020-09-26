@@ -22,7 +22,7 @@ export default function Modal(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle style={{padding:20,borderBottom:"2px solid #f5f5f5",backgroundColor:props.bgcolor ? props.bgcolor : "#fff"}}>{props.title}</DialogTitle>
+        <DialogTitle style={{padding:0,borderBottom:"2px solid #f5f5f5",backgroundColor:props.bgcolor ? props.bgcolor : "#fff"}}>{props.title}</DialogTitle>
         <DialogContent style={{backgroundColor:props.bgcolor ? props.bgcolor : "#fff"}}>
               {props.content}
         </DialogContent>
