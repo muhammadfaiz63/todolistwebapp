@@ -158,7 +158,7 @@ export default function ({ title,logo, children,footerAccount }) {
                   // onClick={toggleMenu}
                 >
                   <img src={title} alt="img" style={{width:"100%",height:120,color:"#fff"}}/>
-                  <div style={{fontSize:13,marginTop:5,textAlign:"center"}}>Food Team</div>
+                  {/* <div style={{fontSize:13,marginTop:5,textAlign:"center"}}>Food Team</div> */}
                 </Button>
                 </center>
               </Item>

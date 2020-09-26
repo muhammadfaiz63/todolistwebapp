@@ -1,9 +1,9 @@
 {
-  "short_name": "Management App",
-  "name": "Efrm Management App",
+  "short_name": "Todo List",
+  "name": "Todo List Web App",
   "icons": [
     {
-      "src": "logo-icon-vertical.png",
+      "src": "logo192.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
