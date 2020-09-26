@@ -7,7 +7,6 @@ import { LoginForm, ResetPasswordForm, ChangePasswordForm, CreateAccountForm } f
 
 export default function () {
   return (
-    !localStorage.token ?
     <Switch>
       <Route exact path='/login' >
         <SingleCard title="Masuk">
@@ -33,7 +32,7 @@ export default function () {
         </SingleCard>
       </Route>
       <Redirect to={'/login'} />
-    </Switch> : <LoadPanel visible={true}/>
+    </Switch>
     
   );
 }

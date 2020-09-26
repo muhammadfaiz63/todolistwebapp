@@ -8,7 +8,7 @@ import Images from "./Themes/Images"
 
 export default function() {
   return (
-    <SideNavBarLayout title={Images.hoodaMerchantlogo}>
+    <SideNavBarLayout title={Images.logo}>
       <Switch>
         {routes.map(({ path, component }) => (
           <Route

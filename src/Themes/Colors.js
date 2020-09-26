@@ -1,5 +1,5 @@
 const colors = {
-    background: '#F15D2A',
+    background: '#00517d',
     clear: 'rgba(0,0,0,0)',
     facebook: '#3b5998',
     transparent: 'rgba(0,0,0,0)',
@@ -22,10 +22,10 @@ const colors = {
     border: '#483F53',
     banner: '#5F3E63',
     text: '#E0D7E5',
-    primary: '#F15D2A',
+    primary: '#00517d',
     disabled: '#BDBDBD',
     backgroundScreen: '#f2f2f2',
-    hover: '#FF6A37'
+    hover: '#00517d'
   }
   
   export default colors

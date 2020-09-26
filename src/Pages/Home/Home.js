@@ -61,7 +61,6 @@ import CardTotal from '../../Components/CardTotal/CardTotal'
 import useStyles from './Styles';
 import { menu } from './Data.js';
 import Api from './../../Services/ApiPrivate'
-import ApiUpload from './../../Services/ApiUpload'
 import Images from "../../Themes/Images"
 import StaticVar from '../../Config/StaticVar';
 import Colors from "../../Themes/Colors"
@@ -71,7 +70,7 @@ function Home(props) {
 
   const { pathname } = props.location
   const { category } = props.match.params
-  const titlePage = "Rider"
+  const titlePage = "User"
   const classes = useStyles();
 
   const [data, setdata] = useState([]);
@@ -115,29 +114,6 @@ function Home(props) {
     setFilteredData(datasearch)
   }
 
-  const getDataMerchant = () => {
-    Api.getMerchant().then(res=>{
-        // console.log("res data",res.data)
-        setdatamerchant(res.data)
-        var datamenumerchant = []
-
-        res.data.map(item=>{
-          if(item.merchantProduct.length > 0){
-            item.merchantProduct.map(val=>{
-              datamenumerchant.push(val)
-            })
-          }
-        })
-
-        datamenumerchant.map(item=>{item["active"] = false})
-
-        setdatamenu(datamenumerchant)
-        
-      }).catch(err=>{
-          console.log("Err",err)
-      })
-    }
-
   const handleModalCustomer = () =>{
     setmodalcustomer(true)
     settitlemodal("Data Customer")
@@ -147,111 +123,14 @@ function Home(props) {
     setmodalcustomer(false)
   }
 
-  useEffect(()=>{
-    getDataMerchant()
-  },[])
-
-  const chooseMenu = (val,dataindex) =>{
-  }
-
-
   return (
+    <div>
+       <PageTitle
+            title={<Grid container><Link to={`/home`} className={classes.titlePageTxt}>Daftar {titlePage}</Link></Grid>}
+        />
     <div className={classes.containerResponsive}>
-      <Grid container style={{justifyContent:"space-between"}}>
-          <div>
-            <Grid container>
-              <img src={Images.hoodaFoodCircleImg} style={{width:95,marginTop:24,marginRight:10}}/>
-              <Typography className={[classes.contentCardTotalLeftBlackTxt,classes.top45px]}>Food Circle</Typography>  
-            </Grid>
-          </div>
-          <div> 
-            <Grid container style={{marginTop:30}}>
-                <div>
-                <Typography className={[classes.grayTxt,classes.left10px]}>Data Customer</Typography>
-                <Button className={classes.notActiveBtn} variant="contained" onClick={handleModalCustomer}>
-                    <PersonIcon style={{fontSize:24,color:Colors.primary,marginRight:10}}/>
-                    <Typography className={classes.orderPrimaryTxt}>Isi Data Customer</Typography>
-                    <NavigateNextIcon style={{fontSize:24,color:Colors.primary,marginLeft:20}}/>
-                </Button>
-                </div>
-                <div>
-                <Typography className={[classes.grayTxt,classes.left10px]}>Keranjang Pesanan</Typography>
-                <Button className={classes.notActiveBtn} variant="contained" component={Link} to="/home/cartorder">
-                    <ShoppingBasketIcon style={{fontSize:24,color:Colors.primary,marginRight:10}}/>
-                    <Typography className={classes.orderPrimaryTxt}>0 Item</Typography>
-                    <NavigateNextIcon style={{fontSize:24,color:Colors.primary,marginLeft:20}}/>
-                </Button>
-                </div>
-            </Grid>
-          </div>
-      </Grid>
-      <Grid container style={{justifyContent:"space-between"}}>
-        <div style={{marginTop:20}}>
-          <Typography className={classes.grayTxt}>Daftar Menu</Typography>
-          <FormControl style={{ width:200 }}>
-            <Select
-                styles={selectBoxStyles}
-                menuPortalTarget={document.body}
-                placeholder="Pilih Menu"
-                options={dataMenu}
-                isSearchable={true}
-                isClearable={true}
-                onChange={selected => handleFilterMenu(selected)}
-                value={dataMenu.filter(
-                    option => option.value === filtermenu
-                )}
-              />
-            </FormControl>
-          </div>
-          <div style={{marginTop:20}}>
-          <FormControl style={{ width:400 }}>
-            <TextField
-              margin="normal"
-              variant="outlined"
-              label={false}
-              placeholder="Cari nama menu"
-              type="search"
-              className={classes.txtSearch}
-              onChange={(e) => searchData(e)}
-              name="search"
-              value={search}
-              InputProps={{
-                className: classes.multilineColor
-              }}
-            />
-          </FormControl>
-          </div>
-      </Grid>
-      <Grid container style={{marginTop:20}}>
-        {
-            datamenu.map((val,index)=>{
-              return(
-                <Grid item key={index} className={classes.containerCardMenu}> 
-                <Button onClick={()=>chooseMenu(val,index)}>
-                  <Card style={{
-                    padding:0,
-                    width:"100%",
-                    height:210,
-                    borderRadius:10,
-                    backgroundColor:val.active ? "rgba(82, 186, 209, 0.65)" : "#fff",
-                    boxShadow:"0px 2px 4px rgba(0, 0, 0, 0.15)",
-                    backdropFilter:val.active ? "blur(2px)" : "",
-                    opacity:val.active ? 0.9 : "",
-                  }}>
-                      <img src={val.ProductPicture ? val.ProductPicture : Images.fastFoodExampleImg} style={{height:140,width:"100%"}}/>
-                      <Typography className={classes.gray2Txt}>{val.ProductName}</Typography>
-                      <Grid container style={{paddingLeft:11,paddingTop:10,justifyContent:"space-between",paddingRight:11}}>
-                        <Typography className={classes.blackTxt}>{val.ProductPrice}</Typography>
-                        <Typography className={classes.strikeThroughGrayRightTxt}>{val.ProductPrice}</Typography>
-                      </Grid>
-                  </Card>
-                </Button>
-              </Grid>
-              )
-            })
-        }
-      </Grid>
-
+     
+      
       <Modal
         open={modalcustomer}
         close={handleModalClose}
@@ -334,6 +213,8 @@ function Home(props) {
           </div>
         }
       />
+    </div>
+    
     </div>
   )
 }

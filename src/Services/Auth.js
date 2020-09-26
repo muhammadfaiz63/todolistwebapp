@@ -19,7 +19,7 @@ api.interceptors.request.use(function (config) {
 });
 
 // ===> api list function request
-const authRequest = (data) => api.post('/auth/login', data);
+const authRequest = (data) => api.post('/auth', data);
 
 export const apis = {
     authRequest,

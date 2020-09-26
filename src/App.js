@@ -25,7 +25,7 @@ function App() {
     return <LoadPanel visible={true} />;
   }
 
-  if (user) {
+  if (localStorage.token) {
     return <Content />;
   }
 

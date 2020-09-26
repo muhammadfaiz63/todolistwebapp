@@ -1,4 +1,4 @@
 export default {
-  title: 'Hooda SysAdmin',
+  title: 'Todo List App Faiz',
   about: ''
 };

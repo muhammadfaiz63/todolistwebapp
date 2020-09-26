@@ -22,30 +22,29 @@ export default function () {
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
-    const { email, password } = formData.current;
+    const { userid, password } = formData.current;
     setLoading(true);
 
-    const result = await signIn(email, password);
+    const result = await signIn(userid, password);
     if (!result.isOk) {
       setLoading(false);
       // notify(result.message, 'error', 2000);
     }
   }, [signIn]);
 
-  const onCreateAccountClick = useCallback(() => {
-    history.push('/create-account');
-  }, [history]);
+  // const onCreateAccountClick = useCallback(() => {
+  //   history.push('/create-account');
+  // }, [history]);
 
   return (
     <form className={'login-form'} onSubmit={onSubmit}>
       <Form formData={formData.current} disabled={loading}>
         <Item
-          dataField={'email'}
+          dataField={'userid'}
           editorType={'dxTextBox'}
-          editorOptions={emailEditorOptions}
+          editorOptions={useridEditorOptions}
         >
-          <RequiredRule message="Email is required" />
-          <EmailRule message="Email is invalid" />
+          <RequiredRule message="Userid is required" />
           <Label visible={false} />
         </Item>
         <Item
@@ -99,6 +98,6 @@ export default function () {
   );
 }
 
-const emailEditorOptions = { stylingMode: 'filled', placeholder: 'Email', mode: 'email' };
+const useridEditorOptions = { stylingMode: 'filled', placeholder: 'Userid', mode: 'userid' };
 const passwordEditorOptions = { stylingMode: 'filled', placeholder: 'Password', mode: 'password' };
 const rememberMeEditorOptions = { text: 'Remember me', elementAttr: { class: 'form-text' } };

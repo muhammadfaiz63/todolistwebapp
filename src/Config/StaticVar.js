@@ -1,7 +1,4 @@
-const BASE_URL_API = 'http://202.83.121.243:100' //
-//server collocation : 'http://202.83.121.246:5017'
-//server localhost : 'http://localhost:5017'
-//server domain : 'https://apispkmpapua.ponxx2021papua.com'
+const BASE_URL_API = 'http://localhost:4300' //
 //Base Url API
 
 export default {

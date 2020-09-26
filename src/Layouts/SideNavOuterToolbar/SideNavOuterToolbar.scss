@@ -20,10 +20,15 @@
   flex-grow: 1;
 }
 
+.footer-account-container{
+  
+  background-color: $base-accent;
+  height: 130px;
+}
+
 .footer-account{
   flex: 1;
   display: flex;
-  background-color: $base-accent;
   justify-content: center;
 }
 

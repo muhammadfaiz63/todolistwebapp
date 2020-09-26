@@ -136,21 +136,12 @@ export default function ({ title,logo, children,footerAccount }) {
             openMenu={temporaryOpenMenu}
             onMenuReady={onMenuReady}
             footerAccount={
-              <Grid container className={"footer-account"}>
+              <Grid container className={"footer-account-container"}>
                 <Grid item md={12} className={"footer-account"}><AccountCircleIcon style={{color:"#fff",fontSize:40}}/></Grid>
-                <Grid item md={12} className={"footer-account"}><Typography style={{fontSize:"2.2vh",color:"#fff"}}>{user.displayName}</Typography></Grid>
-                <Grid item md={12} className={"footer-account"}><Typography style={{fontSize:"1.5vh",color:"#fff",top:-10}}>NIK : 3064</Typography></Grid>
+                <Grid item md={12} className={"footer-account"}><Typography style={{fontSize:"2.2vh",color:"#fff"}}>{localStorage.name}</Typography></Grid>
+                {/* <Grid item md={12} className={"footer-account"}><Typography style={{fontSize:"1.5vh",color:"#fff",top:-10}}>NIK : 3064</Typography></Grid> */}
                 <Grid item md={12} className={"footer-account"}>
-                {/* <ContextMenu
-                  items={menuItems}
-                  target={'.user-button'}
-                  showEvent={'dxclick'}
-                  width={210}
-                  cssClass={'user-menu'}
-                >
-                  <Position my={'top center'} at={'bottom center'} />
-                </ContextMenu> */}
-                  <div onClick={signOut} style={{cursor:"pointer",backgroundColor:"#FF6A37",marginBottom:20,paddingLeft:25,paddingRight:25,paddingTop:15,color:"#fff",borderRadius:10}}>Keluar </div>
+                  <div onClick={signOut} style={{cursor:"pointer",backgroundColor:"#00a6ff",marginBottom:20,paddingLeft:25,paddingRight:25,paddingTop:5,color:"#fff",borderRadius:10}}>Keluar </div>
                 </Grid>
               </Grid>
             }

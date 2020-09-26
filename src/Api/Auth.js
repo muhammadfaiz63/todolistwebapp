@@ -1,13 +1,23 @@
 import defaultUser from '../Utils/DefaultUser';
 
-export async function signIn(email, password) {
+import ApiAuth from "../Services/Auth";
+import ApiPrivate from "../Services/ApiPrivate";
+
+export async function signIn(userid, password) {
   try {
     // Send request
-    console.log(email, password);
+    const res = await ApiAuth.authRequest({userid,password});
+    const response = await res.data;
+  
+    const str = response.token;
+    const token = str.slice(7); 
+    localStorage.setItem("token", token);
+    localStorage.setItem("id", response.user.userid);
+    localStorage.setItem("name", response.user.name);
 
     return {
       isOk: true,
-      data: defaultUser
+      data: response.user
     };
   }
   catch {
@@ -18,13 +28,15 @@ export async function signIn(email, password) {
   }
 }
 
-export async function getUser() {
+export async function getUser(id) {
   try {
     // Send request
+    const res = await ApiPrivate.getUsers(id);
+    const response = await res.data;
 
     return {
       isOk: true,
-      data: defaultUser
+      data: response.result
     };
   }
   catch {
