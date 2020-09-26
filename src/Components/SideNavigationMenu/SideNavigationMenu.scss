@@ -98,6 +98,6 @@
 }
 
 .dx-drawer-overlap.pre-init-blink-fix {
-  @import "../../Utils/patches.scss";
+  @import "../../Utils/Patches.scss";
   @include menu-pre-init-patch;
 }
