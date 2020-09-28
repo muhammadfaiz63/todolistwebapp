@@ -1,4 +1,4 @@
-const BASE_URL_API = 'http://localhost:4300' //
+const BASE_URL_API = 'https://todolist-server-test.herokuapp.com' //
 //Base Url API
 
 export default {
